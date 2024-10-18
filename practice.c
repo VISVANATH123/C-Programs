@@ -3,26 +3,26 @@
 #include<ctype.h>
 int main()
 {
-    char a[100],b[100];
-    int l,i,j;
+    int i,j,l;
+    char a[100],*pos,w[100];
+    int n;
+    scanf("%d",&n);
+    getchar();
     scanf("%[^\n]",a);
-    int f[26]={0};
     l=strlen(a);
-    for(i=0;i<l;i++)
+    char temp;
+    for(i=0;i<n;i++)
     {
-        a[i]=tolower(a[i]);
-        f[a[i]-'a']++;
-    }
-    
-    for(i=0;i<26;i++)
-    {
-        if(f[i]==0)
+        temp=a[l-1];
+        for(j=l-1;j>=0;j--)
         {
-            printf("Not panagram");
-            return 0;
+            a[j]=a[j-1];
         }
+        a[0]=temp;
     }
-    printf("Panagram string");
+    printf("%s",a);
+
     
-    
+
 }
+    
