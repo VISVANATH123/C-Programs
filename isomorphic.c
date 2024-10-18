@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<string.h>
+#include<stdbool.h>
 int main()
 {
     int l;
@@ -10,18 +11,19 @@ int main()
     if(strlen(a)!=strlen(b))
     {
         printf("Not ismorphic");
-        return 0;
+        return false;
     }
     for(int i=0;a[i]!='\0';i++)
     {
         if(m1[(int)a[i]]!=m2[(int)b[i]])
         {
             printf("Not isomorphic");
-            return 0;
+            return false;
         }
         m1[(int)a[i]]++;
         m2[(int)b[i]]++;
     }
     printf("isomorphic string");
+    return true;
     
 }
