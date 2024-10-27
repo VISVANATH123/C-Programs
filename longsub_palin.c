@@ -2,9 +2,8 @@
 #include<stdio.h>
 int is_palin(int s,int e,char a[])
 {
-    while (s<e)
+    while(s<e)
     {
-        /* code */
         if(a[s]!=a[e])
         {
             return 0;
@@ -13,12 +12,12 @@ int is_palin(int s,int e,char a[])
         e--;
     }
     return 1;
-    
 }
 int main()
 {
-    char longest_palin[100]={0},a[100];
-    int i,j,max=0;
+    int max=0,i,j;
+    char long_palin[100]={0};
+    char a[100];
     scanf("%[^\n]",a);
     for(i=0;i<strlen(a);i++)
     {
@@ -30,12 +29,12 @@ int main()
                 if(len>max)
                 {
                     max=len;
-                    strncpy(longest_palin,&a[i],len);
-                    longest_palin[len]='\0';
-
+                    strncpy(long_palin,&a[i],len);
+                    long_palin[len]='\0';
                 }
             }
+
         }
     }
-    printf("%s",longest_palin);
+    printf("%s",long_palin);
 }

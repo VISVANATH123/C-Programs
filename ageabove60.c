@@ -39,6 +39,7 @@ int main()
             }
         }
     
-        printf("%d",p);
     }
+    printf("%d\n",p);
+
 }
